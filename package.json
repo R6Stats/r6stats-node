@@ -1,6 +1,6 @@
 {
   "name": "r6stats",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "R6Stats API Client for NodeJS",
   "main": "index.js",
   "scripts": {
