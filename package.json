@@ -1,10 +1,11 @@
 {
   "name": "r6stats",
-  "version": "0.0.3",
+  "version": "2.0.0-alpha",
   "description": "R6Stats API Client for NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "node local-test.js"
+    "dev": "rollup -c && node local-test.js",
+    "build": "rollup -c"
   },
   "keywords": [
     "r6stats",
@@ -18,7 +19,13 @@
   "author": "Jake <support@r6stats.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.1.0",
+    "rollup-plugin-babel": "^3.0.7"
   }
 }
