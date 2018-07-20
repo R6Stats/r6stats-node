@@ -5,8 +5,9 @@ import axios from 'axios'
 import MissingUserAgentError from './errors/MissingUserAgentError'
 import AuthenticationError from './errors/AuthenticationError'
 import NotAuthenticatedError from './errors/NotAuthenticatedError'
-import PlayerStatsModule from './modules/PlayerStatsModule'
 
+import Stats from './modules/Stats'
+import Search from './modules/Search'
 
 class R6StatsAPI {
   constructor ({ loginId, password, userAgent=null, baseUrl=null, options=null }) {
@@ -17,8 +18,6 @@ class R6StatsAPI {
     this.authData = { token: null }
 
     this.$axios = axios.create(this._baseConfig({ baseUrl, userAgent, options }))
-
-    new PlayerStatsModule(this)
   }
 
   async authenticate () {
@@ -57,6 +56,22 @@ class R6StatsAPI {
       },
       ...config
     })
+  }
+
+  async playerSearch ({ username, platform }) {
+    return this.call(Search.search({ username, platform }))
+  }
+
+  async playerStats ({ uuid }) {
+    return this.call(Stats.playerStats({ uuid }))
+  }
+
+  async operatorStats ({ uuid }) {
+    return this.call(Stats.operatorStats({ uuid }))
+  }
+
+  async seasonalStats ({ uuid }) {
+    return this.call(Stats.seasonalStats({ uuid }))
   }
 
   isAuthenticated () {

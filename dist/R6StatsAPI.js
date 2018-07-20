@@ -10,6 +10,30 @@ class AuthenticationError extends Error {}
 
 class NotAuthenticatedError extends Error {}
 
+const playerStats = ({ uuid }) => ({
+  method: 'get',
+  url: `/stats/${uuid}`
+});
+
+const operatorStats = ({ uuid }) => ({
+  method: 'get',
+  url: `/stats/${uuid}/operators`
+});
+
+const seasonalStats = ({ uuid }) => ({
+  method: 'get',
+  url: `/stats/${uuid}/seasonal`
+});
+
+var Stats = { playerStats, operatorStats, seasonalStats };
+
+const search = ({ username, platform }) => ({
+  method: 'get',
+  url: `/player-search/${username}/${platform}`
+});
+
+var Search = { search };
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 class R6StatsAPI {
@@ -58,6 +82,22 @@ class R6StatsAPI {
         'Authorization': `Bearer: ${this.authData.token}`
       }
     }, config));
+  }
+
+  async playerSearch({ username, platform }) {
+    return this.call(Search.search({ username, platform }));
+  }
+
+  async playerStats({ uuid }) {
+    return this.call(Stats.playerStats({ uuid }));
+  }
+
+  async operatorStats({ uuid }) {
+    return this.call(Stats.operatorStats({ uuid }));
+  }
+
+  async seasonalStats({ uuid }) {
+    return this.call(Stats.seasonalStats({ uuid }));
   }
 
   isAuthenticated() {
