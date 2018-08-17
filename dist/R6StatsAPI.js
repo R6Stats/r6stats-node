@@ -38,7 +38,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 class R6StatsAPI {
   constructor({ loginId, password, userAgent = null, baseUrl = null, options = null }) {
-    if (!baseURL) throw new Error('Base URL must be provided before release');
+    if (!baseUrl) throw new Error('Base URL must be provided before release');
     if (!userAgent) throw new MissingUserAgentError('A user agent must be specified for client recognition');
 
     this.authConfig = { loginId, password };

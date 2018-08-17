@@ -2,7 +2,7 @@
   "name": "r6stats",
   "version": "2.0.0-alpha",
   "description": "R6Stats API Client for NodeJS",
-  "main": "index.js",
+  "main": "dist/R6StatsAPI.js",
   "scripts": {
     "dev": "rollup -c && node local-test.js",
     "build": "rollup -c"
@@ -22,10 +22,16 @@
     "axios": "^0.18.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
+    "babel-jest": "^23.4.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "dotenv": "^6.0.0",
     "eslint": "^5.1.0",
+    "jest": "^23.5.0",
+    "regenerator-runtime": "^0.12.1",
     "rollup-plugin-babel": "^3.0.7"
   }
 }
