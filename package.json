@@ -1,24 +1,28 @@
 {
   "name": "r6stats",
-  "version": "0.0.3",
+  "version": "3.0.0-alpha",
   "description": "R6Stats API Client for NodeJS",
-  "main": "index.js",
+  "main": "lib/R6StatsAPI.js",
+  "types": "lib/R6StatsAPI.d.ts",
   "scripts": {
-    "test": "node local-test.js"
+    "build": "tsc",
+    "dev": "tsc -w"
   },
   "keywords": [
     "r6stats",
-    "rainbow",
-    "six",
-    "r6",
+    "rainbow six",
     "api",
-    "stat",
-    "tracking"
+    "api client"
   ],
   "author": "Jake <support@r6stats.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "regenerator-runtime": "^0.12.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2"
   }
 }

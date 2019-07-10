@@ -1,2 +1,4 @@
-local-test.js
 node_modules/
+*.log
+lib/
+test/
