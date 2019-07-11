@@ -1,16 +1,16 @@
 # R6Stats API Client for NodeJS
 
-This open-source library is provided by the R6Stats team as a means of accessing the R6Stats web API. 
+This open-source library is provided by the R6Stats team as a means of accessing the public R6Stats web API. 
 
 ## Installation
 
 ```bash
-npm install r6stats --save
+npm install @r6stats/node --save
 ```
 
 ## Usage
 
-v2 Documentation WIP
+v3 Documentation WIP
 
 ## License
 

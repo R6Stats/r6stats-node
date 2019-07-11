@@ -1,5 +1,5 @@
 {
-  "name": "@r6stats/r6stats-node",
+  "name": "@r6stats/node",
   "version": "3.0.0-alpha",
   "description": "R6Stats API Client for NodeJS",
   "main": "lib/R6StatsAPI.js",
