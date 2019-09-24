@@ -1,12 +1,10 @@
-'use strict'
-
 import axios, { AxiosInstance } from 'axios'
 
 import { playerStats, operatorStats, seasonalStats, weaponStats, weaponCategoryStats } from './modules/PlayerStats'
 
 import R6StatsAPIConfiguration from './types/R6StatsAPIConfiguration'
-import StatsLookup from './types/StatsLookup';
-import { GenericStatsResponse, OperatorStatsResponse, WeaponStatsResponse, WeaponCategoryStatsResponse, SeasonalStatsResponse } from './types/StatsResponse';
+import StatsLookup from './types/StatsLookup'
+import { GenericStatsResponse, OperatorStatsResponse, WeaponStatsResponse, WeaponCategoryStatsResponse, SeasonalStatsResponse } from './types/StatsResponse'
 
 const DEFAULT_OPTIONS = {
   baseUrl: 'https://api2.r6stats.com/public-api',
@@ -23,28 +21,28 @@ export default class R6StatsAPI {
     this.$axios = axios.create(this._baseConfig(this.config))
   }
 
-  private call (opts: Object) {
+  private async call <T>(opts: Object): Promise<T> {
     return this.$axios(opts).then(resp => resp.data)
   }
 
   async playerStats (params: StatsLookup): Promise<GenericStatsResponse> {
-    return this.call(playerStats(params))
+    return this.call<GenericStatsResponse>(playerStats(params))
   }
 
   async operatorStats (params: StatsLookup): Promise<OperatorStatsResponse> {
-    return this.call(operatorStats(params))
+    return this.call<OperatorStatsResponse>(operatorStats(params))
   }
 
   async seasonalStats (params: StatsLookup): Promise<SeasonalStatsResponse> {
-    return this.call(seasonalStats(params))
+    return this.call<SeasonalStatsResponse>(seasonalStats(params))
   }
 
   async weaponStats (params: StatsLookup): Promise<WeaponStatsResponse> {
-    return this.call(weaponStats(params))
+    return this.call<WeaponStatsResponse>(weaponStats(params))
   }
 
   async weaponCategoryStats (params: StatsLookup): Promise<WeaponCategoryStatsResponse> {
-    return this.call(weaponCategoryStats(params))
+    return this.call<WeaponCategoryStatsResponse>(weaponCategoryStats(params))
   }
 
   private _baseConfig (config: R6StatsAPIConfiguration): object {
