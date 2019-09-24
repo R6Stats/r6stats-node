@@ -24,7 +24,7 @@ interface BaseResponse {
 }
 
 export interface GenericStatsResponse extends BaseResponse {
-  aliases: Array<PlayerAlias>
+  aliases: PlayerAlias[]
   progression: PlayerProgression
   stats: {
     general: GeneralStats
@@ -43,15 +43,15 @@ export interface GenericStatsResponse extends BaseResponse {
 }
 
 export interface OperatorStatsResponse extends BaseResponse {
-  operators: Array<OperatorStat>
+  operators: OperatorStat[]
 }
 
 export interface WeaponStatsResponse extends BaseResponse {
-  weapons: Array<WeaponStat>
+  weapons: WeaponStat[]
 }
 
 export interface WeaponCategoryStatsResponse extends BaseResponse {
-  categories: Array<WeaponCategoryStat>
+  categories: WeaponCategoryStat[]
 }
 
 export interface SeasonalStatsResponse extends BaseResponse {

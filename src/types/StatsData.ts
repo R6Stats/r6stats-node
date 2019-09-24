@@ -95,7 +95,7 @@ export interface OperatorStat {
   melee_kills: number
   experience: number
   playtime: number
-  abilities: Array<OperatorAbility>
+  abilities: OperatorAbility[]
   badge_image: string
 }
 
@@ -133,9 +133,9 @@ export interface SeasonalStat {
   start_date: string
   end_date?: string
   regions: {
-    ncsa: Array<SeasonRegionStat>
-    emea: Array<SeasonRegionStat>
-    apac: Array<SeasonRegionStat>
+    ncsa: SeasonRegionStat[]
+    emea: SeasonRegionStat[]
+    apac: SeasonRegionStat[]
   }
 }
 
