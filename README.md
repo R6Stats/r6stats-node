@@ -48,3 +48,5 @@ console.log(player.username, player.categories[0].category, player.categories[0]
 See `LICENSE`
 
 The R6Stats API Client library may be used in any project given that it does not directly compete with the R6Stats Website or its available applications. The client library is meant for individual usage only. Please direct all licensing questions to [support@r6stats.com](mailto:support@r6stats.com).
+
+R6Stats is a fan-made project and is not affiliated with Ubisoft. Tom Clancy’s, Rainbow Six, The Soldier Icon, Ubisoft and the Ubisoft logo are trademarks of Ubisoft Entertainment. Google Play and the Google Play logo are trademarks of Google LLC. Apple and the Apple Logo are trademarks of Apple Inc. App Store is a service mark of Apple Inc.

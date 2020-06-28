@@ -1,17 +1,17 @@
 import axios, { AxiosInstance } from 'axios'
-import { operatorStats, playerStats, seasonalStats, weaponCategoryStats, weaponStats } from './modules/PlayerStats'
-import R6StatsAPIConfiguration from './types/R6StatsAPIConfiguration'
-import StatsLookup from './types/StatsLookup'
-import { GenericStatsResponse, OperatorStatsResponse, SeasonalStatsResponse, WeaponCategoryStatsResponse, WeaponStatsResponse } from './types/StatsResponse'
+import { operatorStats, playerStats, seasonalStats, weaponCategoryStats, weaponStats } from './modules/player-stats'
+import { GenericStatsResponse, OperatorStatsResponse, SeasonalStatsResponse, WeaponCategoryStatsResponse, WeaponStatsResponse } from './types'
+import { R6StatsAPIConfiguration } from './types/api-config.type'
+import { StatsLookup } from './types/stats-request.type'
 
 const DEFAULT_OPTIONS = {
   baseUrl: 'https://api2.r6stats.com/public-api',
-  userAgent: 'R6Stats API Application'
+  userAgent: 'R6Stats API Application',
 }
 
 export default class R6StatsAPI {
-  private $axios: AxiosInstance;
-  private config: R6StatsAPIConfiguration;
+  private $axios: AxiosInstance
+  private config: R6StatsAPIConfiguration
 
   constructor (config: R6StatsAPIConfiguration) {
     this.config = Object.assign({}, DEFAULT_OPTIONS, config)
@@ -53,5 +53,4 @@ export default class R6StatsAPI {
       }
     }
   }
-
 }

@@ -3,7 +3,7 @@
   "version": "3.0.1",
   "description": "R6Stats API Client for NodeJS",
   "main": "lib/R6StatsAPI.js",
-  "types": "lib/R6StatsAPI.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w"

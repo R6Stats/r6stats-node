@@ -1,4 +1,4 @@
-import StatsLookup from '../types/StatsLookup'
+import { StatsLookup } from '../types/stats-request.type'
 
 export const playerStats = ({ username, platform }: StatsLookup) => ({
   method: 'get',
