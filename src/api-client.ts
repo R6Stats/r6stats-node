@@ -9,7 +9,7 @@ const DEFAULT_OPTIONS = {
   userAgent: 'R6Stats API Application',
 }
 
-export default class R6StatsAPI {
+export class R6StatsAPI {
   private $axios: AxiosInstance
   private config: R6StatsAPIConfiguration
 

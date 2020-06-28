@@ -1,11 +1,11 @@
 {
   "name": "@r6stats/node",
-  "version": "3.0.1",
+  "version": "3.0.6",
   "description": "R6Stats API Client for NodeJS",
-  "main": "lib/R6StatsAPI.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib/ && tsc",
     "dev": "tsc -w"
   },
   "keywords": [
