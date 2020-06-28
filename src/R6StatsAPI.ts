@@ -1,10 +1,8 @@
 import axios, { AxiosInstance } from 'axios'
-
-import { playerStats, operatorStats, seasonalStats, weaponStats, weaponCategoryStats } from './modules/PlayerStats'
-
+import { operatorStats, playerStats, seasonalStats, weaponCategoryStats, weaponStats } from './modules/PlayerStats'
 import R6StatsAPIConfiguration from './types/R6StatsAPIConfiguration'
 import StatsLookup from './types/StatsLookup'
-import { GenericStatsResponse, OperatorStatsResponse, WeaponStatsResponse, WeaponCategoryStatsResponse, SeasonalStatsResponse } from './types/StatsResponse'
+import { GenericStatsResponse, OperatorStatsResponse, SeasonalStatsResponse, WeaponCategoryStatsResponse, WeaponStatsResponse } from './types/StatsResponse'
 
 const DEFAULT_OPTIONS = {
   baseUrl: 'https://api2.r6stats.com/public-api',

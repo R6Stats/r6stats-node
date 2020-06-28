@@ -1,17 +1,4 @@
-import {
-  PlayerAlias,
-  PlayerProgression,
-  GeneralStats,
-  QueueStats,
-  GamemodeBombStats,
-  GamemodeSecureAreaStats,
-  GamemodeHostageStats,
-  Timestamps,
-  OperatorStat,
-  WeaponStat,
-  WeaponCategoryStat,
-  SeasonalStat
-} from './StatsData'
+import { GamemodeBombStats, GamemodeHostageStats, GamemodeSecureAreaStats, GeneralStats, OperatorStat, PlayerAlias, PlayerProgression, QueueStats, SeasonalStat, Timestamps, WeaponCategoryStat, WeaponStat } from './StatsData';
 
 interface BaseResponse {
   username: string
