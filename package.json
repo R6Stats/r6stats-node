@@ -2,6 +2,15 @@
   "name": "@r6stats/node",
   "version": "4.0.0-alpha1",
   "description": "R6Stats API Client for NodeJS",
+  "author": "Jake <support@r6stats.com>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R6Stats/r6stats-node"
+  },
+  "bugs": {
+    "url": "https://github.com/R6Stats/r6stats-node/issues"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -14,16 +23,15 @@
     "api",
     "api client"
   ],
-  "author": "Jake <support@r6stats.com>",
-  "license": "GPL-3.0",
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.19.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.3.1",
-    "eslint": "^5.1.0",
-    "regenerator-runtime": "^0.12.1",
-    "tslib": "^1.10.0",
-    "typescript": "^3.5.2"
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "eslint": "^7.4.0",
+    "regenerator-runtime": "^0.13.5",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
   }
 }
