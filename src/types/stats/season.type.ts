@@ -1,12 +1,22 @@
 export interface SeasonalStat {
   name: string
+  season: number
+  primary_color: string
   start_date: string
   end_date?: string
+  ranks: SeasonRank[]
   regions: {
     ncsa: SeasonRegionStat[]
     emea: SeasonRegionStat[]
     apac: SeasonRegionStat[]
   }
+}
+
+export interface SeasonRank {
+  name: string
+  rank: number
+  path: string
+  champions: boolean
 }
 
 export interface SeasonRegionStat {

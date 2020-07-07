@@ -1,5 +1,9 @@
 import { GamemodeBombStats, GamemodeHostageStats, GamemodeSecureAreaStats, GeneralStats, OperatorStat, PlayerAlias, PlayerProgression, QueueStats, SeasonalStat, Timestamps, WeaponCategoryStat, WeaponStat } from './'
 
+export interface APIResponse<T> {
+  data: T
+}
+
 interface BaseResponse {
   username: string
   platform: string
@@ -42,7 +46,5 @@ export interface WeaponCategoryStatsResponse extends BaseResponse {
 }
 
 export interface SeasonalStatsResponse extends BaseResponse {
-  seasons: {
-    [key: string]: SeasonalStat
-  }
+  seasons: SeasonalStat[]
 }
