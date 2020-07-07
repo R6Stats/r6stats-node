@@ -1,5 +1,9 @@
 # R6Stats API Client for NodeJS
 
+[![Discord](https://discordapp.com/api/guilds/293848587391991836/embed.png)](https://discord.gg/pUdraS3)
+[![npm (scoped)](https://img.shields.io/npm/v/@r6stats/node)](https://www.npmjs.com/package/@r6stats/node)
+[![David](https://img.shields.io/david/r6stats/r6stats-node)](https://david-dm.org/r6stats/r6stats-node)
+
 This open-source library is provided by the R6Stats team as a means of accessing the public R6Stats web API.
 
 ## Installation
