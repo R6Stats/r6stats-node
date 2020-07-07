@@ -8,6 +8,12 @@ This open-source library is provided by the R6Stats team as a means of accessing
 npm install @r6stats/node --save
 ```
 
+If you are using an older version of the R6Stats API (v2, currently v3), you'll need to install an older version of the library.
+
+```bash
+npm install @r6stats/node@3.0.7 --save
+```
+
 ## API Key
 
 Although the R6Stats API is currently provided free of charge, we do require an API key to maintain access control. You can obtain an API key via our [Discord Server](https://discord.com/invite/pUdraS3) or via [support@r6stats.com](support@r6stats.com).
@@ -16,31 +22,36 @@ Although the R6Stats API is currently provided free of charge, we do require an 
 
 ### Version 3.x
 
-```js
+```ts
 import R6StatsAPI from '@r6stats/node'
 
 // create an instance of the API client
 const api = new R6StatsAPI({ apiKey: 'xxx' })
 ```
 
-```js
+```ts
 // valid platform options: pc, xbox, ps4
 
 // get general stats (kills, deaths, etc.)
-const player = await api.playerStats({ username: 'xxx', platform: 'pc' })
+const { data: player } = await api.playerStats('KingGeorge', 'pc')
 console.log(player.username, player.stats.general.kills)
 
 // get operator stats
-const player = await api.operatorStats({ username: 'xxx', platform: 'pc' })
+const { data: player } = await api.operatorStats('KingGeorge', 'pc')
 console.log(player.username, player.operators[0].name, player.operators[0].kills)
 
 // get weapon stats
-const player = await api.weaponStats({ username: 'xxx', platform: 'pc' })
+const { data: player } = await api.weaponStats('KingGeorge', 'pc')
 console.log(player.username, player.weapons[0].name, player.weapons[0].kills)
 
 // get weapon category stats
-const player = await api.weaponCategoryStats({ username: 'xxx', platform: 'pc' })
+const { data: player } = await api.weaponCategoryStats('KingGeorge', 'pc')
 console.log(player.username, player.categories[0].category, player.categories[0].kills)
+
+// get seasonal stats
+const { data: player } = await api.seasonalStats('KingGeorge', 'pc')
+// log latest season name and number of wins in the american region
+console.log(player.username, player.seasons[0].name, player.seasons[0].regions.ncsa[0].wins)
 ```
 
 ## License

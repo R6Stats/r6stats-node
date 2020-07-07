@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { operatorStats, playerStats, seasonalStats, weaponCategoryStats, weaponStats } from './modules/player-stats'
 import { GenericStatsResponse, OperatorStatsResponse, SeasonalStatsResponse, WeaponCategoryStatsResponse, WeaponStatsResponse, APIResponse } from './types'
 import { R6StatsAPIConfiguration } from './types/api-config.type'
-import { StatsLookup } from './types/stats-request.type'
+import { Platform } from './types/stats/meta.type'
 
 const DEFAULT_OPTIONS = {
   baseUrl: 'https://api.r6stats.com/public-api',
@@ -23,24 +23,24 @@ export class R6StatsAPI {
     return this.$axios(opts).then(resp => resp.data)
   }
 
-  public async playerStats (params: StatsLookup): Promise<APIResponse<GenericStatsResponse>> {
-    return this.call<GenericStatsResponse>(playerStats(params))
+  public async playerStats (username: string, platform: Platform): Promise<APIResponse<GenericStatsResponse>> {
+    return this.call<GenericStatsResponse>(playerStats(username, platform))
   }
 
-  public async operatorStats (params: StatsLookup): Promise<APIResponse<OperatorStatsResponse>> {
-    return this.call<OperatorStatsResponse>(operatorStats(params))
+  public async operatorStats (username: string, platform: Platform): Promise<APIResponse<OperatorStatsResponse>> {
+    return this.call<OperatorStatsResponse>(operatorStats(username, platform))
   }
 
-  public async seasonalStats (params: StatsLookup): Promise<APIResponse<SeasonalStatsResponse>> {
-    return this.call<SeasonalStatsResponse>(seasonalStats(params))
+  public async seasonalStats (username: string, platform: Platform): Promise<APIResponse<SeasonalStatsResponse>> {
+    return this.call<SeasonalStatsResponse>(seasonalStats(username, platform))
   }
 
-  public async weaponStats (params: StatsLookup): Promise<APIResponse<WeaponStatsResponse>> {
-    return this.call<WeaponStatsResponse>(weaponStats(params))
+  public async weaponStats (username: string, platform: Platform): Promise<APIResponse<WeaponStatsResponse>> {
+    return this.call<WeaponStatsResponse>(weaponStats(username, platform))
   }
 
-  public async weaponCategoryStats (params: StatsLookup): Promise<APIResponse<WeaponCategoryStatsResponse>> {
-    return this.call<WeaponCategoryStatsResponse>(weaponCategoryStats(params))
+  public async weaponCategoryStats (username: string, platform: Platform): Promise<APIResponse<WeaponCategoryStatsResponse>> {
+    return this.call<WeaponCategoryStatsResponse>(weaponCategoryStats(username, platform))
   }
 
   private getBaseConfig (config: R6StatsAPIConfiguration): AxiosRequestConfig {
