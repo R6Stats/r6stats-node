@@ -11,6 +11,7 @@ interface BaseResponse {
   uplay_id: string
   avatar_url_146: string
   avatar_url_256: string
+  claimed: boolean
   last_updated: string
 }
 
