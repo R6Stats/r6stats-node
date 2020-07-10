@@ -32,7 +32,12 @@ export interface SeasonRegionStat {
   skill_mean: number
   skill_standard_deviation: number
   created_for_date: string
+  updated_at: string
   wins: number
-  rank_text: string
-  rank_image: string
+  kills: number
+  deaths: number
+  last_match_mmr_change: number
+  last_match_skill_mean_change: number
+  last_match_skill_standard_deviation_change: number
+  champions_rank_position: string
 }
