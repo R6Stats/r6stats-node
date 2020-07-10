@@ -39,5 +39,5 @@ export interface SeasonRegionStat {
   last_match_mmr_change: number
   last_match_skill_mean_change: number
   last_match_skill_standard_deviation_change: number
-  champions_rank_position: string
+  champions_rank_position: number
 }
